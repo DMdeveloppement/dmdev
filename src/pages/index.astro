@@ -25,8 +25,8 @@ import { initializeWebContext } from '@/web/utils/initialize-web-context';
 
 await initializeWebContext(Astro, {
   locale: enUS,
-  translations: getEntry('translations', 'en'),
-  dateFormat: 'MMMM yyyy',
+  translations: getEntry('translations', 'fr'),
+  dateFormat: 'dd/mm/yyyy',
   theme: 'custom',
   pdf: {
     path: '/generated/pdf/index.pdf',
@@ -56,7 +56,7 @@ await initializeWebContext(Astro, {
   </Sidebar>
   <Basics entry={getEntry('basics', 'main')} id="basics" />
   <Section class="gap-8" id="skills">
-    <SectionTitle>Skills</SectionTitle>
+    <SectionTitle>Compétences</SectionTitle>
     <VerticalList class="gap-8">
       <Subsection class="gap-2">
         <SubsectionTitle>Technologies</SubsectionTitle>
@@ -78,7 +78,7 @@ await initializeWebContext(Astro, {
         </GridList>
       </Subsection>
       <Subsection class="gap-2">
-        <SubsectionTitle>Tools</SubsectionTitle>
+        <SubsectionTitle>Outils</SubsectionTitle>
         <HorizontalList class="gap-3">
           <Skill entry={getEntry('skills', 'neon')} />
           <Skill entry={getEntry('skills', 'sentry')} />
@@ -87,7 +87,7 @@ await initializeWebContext(Astro, {
         </HorizontalList>
       </Subsection>
       <Subsection class="gap-2">
-        <SubsectionTitle>Languages</SubsectionTitle>
+        <SubsectionTitle>Langages</SubsectionTitle>
         <HorizontalList class="gap-3">
           <Skill entry={getEntry('skills', 'english')} />
           <Skill entry={getEntry('skills', 'spanish')} />
@@ -96,9 +96,9 @@ await initializeWebContext(Astro, {
     </VerticalList>
   </Section>
   <Section class="gap-8" id="jobs">
-    <SectionTitle>Work</SectionTitle>
+    <SectionTitle>Expériences</SectionTitle>
     <VerticalList class="gap-10">
-      <Job entry={getEntry('jobs', 'meta')} />
+      <Job entry={getEntry('jobs', 'yooz')} />
       <Separator />
       <Job entry={getEntry('jobs', 'shopify')} />
       <Separator />
@@ -134,7 +134,7 @@ await initializeWebContext(Astro, {
     </VerticalList>
   </Section>
   <Section class="gap-8" id="education">
-    <SectionTitle>Education</SectionTitle>
+    <SectionTitle>Formation</SectionTitle>
     <VerticalList class="gap-10">
       <Education entry={getEntry('education', 'master')} />
       <Separator />

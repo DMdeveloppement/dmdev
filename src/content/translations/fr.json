@@ -1,0 +1,12 @@
+{
+  "age": "Age",
+  "age_value_one": "{{count}} an",
+  "age_value_other": "{{count}} ans",
+  "email": "Email",
+  "phone": "Téléphone",
+  "location": "Adresse",
+  "current": "Courant",
+  "related_skills": "Compétences",
+  "toggle_theme": "Changer de theme",
+  "popover_trigger": "Voir plus"
+}
