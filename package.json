@@ -26,6 +26,8 @@
     "check": "concurrently \"eslint .\" \"astro check\" \"prettier --check .\" -n eslint,astro,prettier -c magenta,red,yellow",
     "format": "prettier --write .",
     "generate": "tsx cli generate",
+    "generate:pdf": "tsx cli pdf",
+    "generate:pdf:watch": "nodemon --exec \"tsx cli pdf\"",
     "generate:og": "tsx cli og",
     "generate:og:watch": "nodemon --exec \"tsx cli og\"",
     "generate:favicons": "tsx cli favicons",
