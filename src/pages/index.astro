@@ -1,6 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
-import { enUS } from 'date-fns/locale';
+import { fr } from 'date-fns/locale';
 
 import { GridList, HorizontalList, VerticalList } from '@/components/list';
 import Separator from '@/components/separator.astro';
@@ -24,10 +24,10 @@ import { Skill } from '@/web/components/skills';
 import { initializeWebContext } from '@/web/utils/initialize-web-context';
 
 await initializeWebContext(Astro, {
-  locale: enUS,
+  locale: fr,
   translations: getEntry('translations', 'fr'),
-  dateFormat: 'dd/mm/yyyy',
-  theme: 'custom',
+  dateFormat: 'dd/MM/yyyy',
+  theme: 'light',
   pdf: {
     path: '/generated/pdf/index.pdf',
     label: 'Download resume',
@@ -100,9 +100,23 @@ await initializeWebContext(Astro, {
     <VerticalList class="gap-10">
       <Job entry={getEntry('jobs', 'yooz')} />
       <Separator />
-      <Job entry={getEntry('jobs', 'shopify')} />
+      <Job entry={getEntry('jobs', 'thales')} />
       <Separator />
-      <Job entry={getEntry('jobs', 'codepen')} />
+      <Job entry={getEntry('jobs', 'digitre2')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'royal-canin')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'digitre1')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'smag')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'dcbrain')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'sabatier-geolocalisation')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'americaronline')} />
+      <Separator />
+      <Job entry={getEntry('jobs', 'microagency')} />
     </VerticalList>
   </Section>
   <Section class="gap-8" id="projects">
