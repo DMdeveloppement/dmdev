@@ -1,5 +1,6 @@
 ---
 import { Icon } from '@/components/icon';
+import Img from '@/components/img.astro';
 import Linkable from '@/components/linkable.astro';
 import type { AsyncEntry } from '@/types/entries';
 import { cn } from '@/utils/cn';
@@ -17,7 +18,7 @@ if (!skill.level) {
   throw new Error(`Skill "${skill.name}" is missing a "level" field.`);
 }
 
-const [level, maxLevel] = skill.level.split('/').map(Number) as [number, number];
+//const [level, maxLevel] = skill.level.split('/').map(Number) as [number, number];
 const Description = body.trim().length > 0 && (await render()).Content;
 const iconStyle = skill.color ? { color: skill.color } : undefined;
 
@@ -28,6 +29,7 @@ const textClass = cn('text-sm font-medium text-color-text-primary sm:text-base')
 
 <div class="flex flex-col gap-1.5">
   <div class="flex items-start gap-1.5">
+    {skill.image && <Img src={skill.image} alt={skill.name} width={20} height={20} class="size-4" />}
     {skill.icon && <Icon name={skill.icon} style={iconStyle} class={iconClass} />}
     <Linkable class={textClass} href={skill.url}>
       {skill.name}
@@ -46,13 +48,13 @@ const textClass = cn('text-sm font-medium text-color-text-primary sm:text-base')
       )
     }
   </div>
-  <div>
-    <div class="flex gap-1">
+  <!--div>
+    <div-- class="flex gap-1">
       {
         Array.from({ length: maxLevel }, (_, i) => (
           <div class={`h-1.5 flex-1 rounded-sm sm:h-2 ${i < level ? 'bg-color-bg-dark' : 'bg-color-bg-main'}`} />
         ))
       }
     </div>
-  </div>
+  </div-->
 </div>

@@ -8,9 +8,9 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import compress from '@playform/compress';
-import { defineConfig, envField } from 'astro/config';
 import icon from 'astro-icon';
 import metaTags from 'astro-meta-tags';
+import { defineConfig, envField } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
