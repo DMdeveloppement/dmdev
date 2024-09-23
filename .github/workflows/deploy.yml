@@ -16,6 +16,7 @@ permissions:
 
 env:
   ASTRO_SITE: https://dmdeveloppement.github.io
+  BASE_URL: dmdev
 
 jobs:
   build:

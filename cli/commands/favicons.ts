@@ -13,7 +13,7 @@ const OUTPUT_ASTRO_FILE = 'favicons.astro';
 
 export async function faviconsCommand() {
   const { images, files, html } = await generateFavicons();
-
+  console.log(html);
   await ensureCleanDirExists(OUTPUT_ASSETS_DIR);
   await ensureCleanDirExists(OUTPUT_ASTRO_DIR);
 
@@ -27,7 +27,7 @@ export async function faviconsCommand() {
 
 async function generateFavicons() {
   return favicons(data.baseImage, {
-    path: OUTPUT_ASSETS_DIR.replace('public', ''),
+    path: OUTPUT_ASSETS_DIR.replace('public', 'dmdev'),
     appName: data.appName,
     appDescription: data.appDescription,
     appShortName: data.appShortName,

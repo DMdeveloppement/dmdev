@@ -1,3 +1,4 @@
+/* eslint-disable simple-import-sort/imports */
 import 'dotenv/config';
 
 import { existsSync } from 'node:fs';
@@ -15,7 +16,7 @@ import { defineConfig, envField } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: getSiteUrl(),
-  base: 'dmdev',
+  base: process.env.BASE_URL,
   experimental: {
     env: {
       schema: {
