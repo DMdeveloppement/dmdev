@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content';
 import { fr } from 'date-fns/locale';
 
-import { GridList, HorizontalList, VerticalList } from '@/components/list';
+import { HorizontalList, VerticalList } from '@/components/list';
 import Separator from '@/components/separator.astro';
 import AccentColors from '@/styles/colors/accent/indigo.astro';
 import DuskColors from '@/styles/colors/dusk/slate.astro';
@@ -24,9 +24,9 @@ await initializeWebContext(Astro, {
   dateFormat: 'dd/MM/yyyy',
   theme: 'light',
   pdf: {
-    path: '/generated/pdf/index.pdf',
+    path: 'dmdev/generated/pdf/index.pdf',
     label: 'Téléchager mon CV',
-    filename: 'mark-freeman-resume.pdf',
+    filename: 'marc-dugas-cv.pdf',
   },
 });
 ---
@@ -52,24 +52,24 @@ await initializeWebContext(Astro, {
     <VerticalList class="gap-8">
       <Subsection class="gap-2">
         <SubsectionTitle>Front End</SubsectionTitle>
-        <GridList class="gap-8" minColWidth="200px">
-          <Skill withLevel entry={getEntry('skills', 'angular')} />
-          <Skill withLevel entry={getEntry('skills', 'react')} />
-          <Skill withLevel entry={getEntry('skills', 'next')} />
-          <Skill withLevel entry={getEntry('skills', 'eslint')} />
-          <Skill withLevel entry={getEntry('skills', 'vitest')} />
-          <Skill withLevel entry={getEntry('skills', 'typescript')} />
-        </GridList>
+        <HorizontalList class="gap-3">
+          <Skill entry={getEntry('skills', 'angular')} />
+          <Skill entry={getEntry('skills', 'react')} />
+          <Skill entry={getEntry('skills', 'next')} />
+          <Skill entry={getEntry('skills', 'eslint')} />
+          <Skill entry={getEntry('skills', 'vitest')} />
+          <Skill entry={getEntry('skills', 'typescript')} />
+        </HorizontalList>
       </Subsection>
       <Subsection class="gap-2">
         <SubsectionTitle>Back End</SubsectionTitle>
-        <GridList class="gap-8" minColWidth="200px">
-          <Skill withLevel entry={getEntry('skills', 'nodejs')} />
-          <Skill withLevel entry={getEntry('skills', 'postgresql')} />
-          <Skill withLevel entry={getEntry('skills', 'mysql')} />
-          <Skill withLevel entry={getEntry('skills', 'knex')} />
-          <Skill withLevel entry={getEntry('skills', 'typescript')} />
-        </GridList>
+        <HorizontalList class="gap-3">
+          <Skill entry={getEntry('skills', 'nodejs')} />
+          <Skill entry={getEntry('skills', 'postgresql')} />
+          <Skill entry={getEntry('skills', 'mysql')} />
+          <Skill entry={getEntry('skills', 'knex')} />
+          <Skill entry={getEntry('skills', 'typescript')} />
+        </HorizontalList>
       </Subsection>
       <Subsection class="gap-2">
         <SubsectionTitle>Outils</SubsectionTitle>
