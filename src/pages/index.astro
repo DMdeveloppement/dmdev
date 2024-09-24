@@ -21,7 +21,7 @@ import { initializeWebContext } from '@/web/utils/initialize-web-context';
 await initializeWebContext(Astro, {
   locale: fr,
   translations: getEntry('translations', 'fr'),
-  dateFormat: 'dd/MM/yyyy',
+  dateFormat: 'MMMM yyyy',
   theme: 'light',
   pdf: {
     path: 'generated/pdf/index.pdf',
