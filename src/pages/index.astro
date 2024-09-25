@@ -9,6 +9,7 @@ import DuskColors from '@/styles/colors/dusk/slate.astro';
 import ElementColors from '@/styles/colors/elements/default.astro';
 import Font from '@/styles/fonts/inter.astro';
 import { Basics } from '@/web/components/basics';
+import Contact from '@/web/components/contact.astro';
 import Education from '@/web/components/education.astro';
 import Job from '@/web/components/job.astro';
 import Layout from '@/web/components/layout.astro';
@@ -43,8 +44,8 @@ await initializeWebContext(Astro, {
     <SidebarItem sectionId="basics" icon="fa6-solid:user">Mon profil</SidebarItem>
     <SidebarItem sectionId="skills" icon="fa6-solid:bars-progress">Compétences</SidebarItem>
     <SidebarItem sectionId="jobs" icon="fa6-solid:suitcase">Expériences</SidebarItem>
-    <!-- <SidebarItem sectionId="references" icon="fa6-solid:comment">References</SidebarItem> -->
     <SidebarItem sectionId="education" icon="fa6-solid:graduation-cap">Formation</SidebarItem>
+    <SidebarItem sectionId="contact" icon="fa6-solid:comment">Contact</SidebarItem>
   </Sidebar>
   <Basics entry={getEntry('basics', 'main')} id="basics" />
   <Section class="gap-8" id="skills">
@@ -115,12 +116,16 @@ await initializeWebContext(Astro, {
   </Section>
   <Section class="gap-8" id="education">
     <SectionTitle>Formation</SectionTitle>
-    <VerticalList class="gap-10">
+    <VerticalList class="gap-1">
       <Education entry={getEntry('education', 'master2')} />
       <Separator />
       <Education entry={getEntry('education', 'master1')} />
       <Separator />
       <Education entry={getEntry('education', 'deug')} />
     </VerticalList>
+  </Section>
+  <Section class="gap-8" id="contact">
+    <SectionTitle>Contact</SectionTitle>
+    <Contact />
   </Section>
 </Layout>
