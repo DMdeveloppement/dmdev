@@ -29,49 +29,52 @@ const { data: job, body, render } = await entry;
 ---
 
 <div>
-  <div class="mb-5 flex items-start gap-4">
-    {
-      job.image && (
-        <Img
-          class="hidden size-20 rounded object-contain sm:block"
-          src={job.image}
-          alt={job.organization}
-          width={160}
-          height={160}
-          {loading}
-        />
-      )
-    }
-    <div>
-      <h3 class="text-lg font-bold text-color-text-title sm:text-xl">
-        {job.position}
-      </h3>
-      <div class="flex gap-1.5">
-        {
-          job.image && (
-            <Img
-              class="size-5 rounded object-contain sm:hidden"
-              src={job.image}
-              alt={job.organization}
-              width={40}
-              height={40}
-              {loading}
-            />
-          )
-        }
-        <div
-          class="text-sm font-medium text-color-text-title sm:text-base"
-          set:html={removeTopElement(markdownToHtml(job.organization))}
+  <div class="flex flex-col items-start lg:flex-row">
+    <div class="mb-5 flex items-start gap-4">
+      {
+        job.image && (
+          <Img
+            class="hidden size-20 rounded object-contain sm:block"
+            src={job.image}
+            alt={job.organization}
+            width={160}
+            height={160}
+            {loading}
+          />
+        )
+      }
+      <div>
+        <h3 class="text-lg font-bold text-color-text-title sm:text-xl">
+          {job.position}
+        </h3>
+        <div class="flex gap-1.5">
+          {
+            job.image && (
+              <Img
+                class="size-5 rounded object-contain sm:hidden"
+                src={job.image}
+                alt={job.organization}
+                width={40}
+                height={40}
+                {loading}
+              />
+            )
+          }
+          <div
+            class="text-sm font-medium text-color-text-title sm:text-base"
+            set:html={removeTopElement(markdownToHtml(job.organization))}
+          />
+        </div>
+        <DateRange
+          class="text-sm font-normal text-color-text-primary sm:text-base"
+          startDate={job.startDate}
+          endDate={job.endDate}
         />
       </div>
-      <DateRange
-        class="text-sm font-normal text-color-text-primary sm:text-base"
-        startDate={job.startDate}
-        endDate={job.endDate}
-      />
     </div>
+
+    {job.details && <Details class="mb-3" details={job.details} />}
   </div>
-  {job.details && <Details class="mb-3" details={job.details} />}
   {body.trim().length > 0 && <RenderedContent {render} />}
   {
     job.skills && shouldDisplay(relatedSkills) && (

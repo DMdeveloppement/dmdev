@@ -43,7 +43,7 @@ if (exclude) {
 ---
 
 <div class={cn('space-y-1.5', className)}>
-  {shouldDisplay(label) && <div class="text-sm font-semibold text-color-text-title sm:text-base">{label}:</div>}
+  {shouldDisplay(label) && <div class="text-sm font-semibold text-color-text-title sm:text-base">{label}</div>}
   <div class="flex flex-wrap gap-x-3 gap-y-2">
     {skillEntries.map((entry) => <SkillWithoutLevel {entry} />)}
   </div>
