@@ -73,7 +73,7 @@ const { data: job, body, render } = await entry;
       </div>
     </div>
 
-    {job.details && <Details class="mb-3" details={job.details} itemClass="lg:flex-col" />}
+    {job.details && <Details class="mb-3 flex-1 flex-row justify-end" details={job.details} />}
   </div>
   {body.trim().length > 0 && <RenderedContent {render} />}
   {
