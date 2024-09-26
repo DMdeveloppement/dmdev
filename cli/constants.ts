@@ -1,1 +1,1 @@
-export const SERVER_URL = 'http://localhost:4321/dmdev';
+export const SERVER_URL = 'http://localhost:4321';

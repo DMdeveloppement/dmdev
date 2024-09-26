@@ -4,19 +4,20 @@ import { markdownToHtml } from '@/utils/markdown-to-html';
 
 interface Props {
   class?: string;
+  itemClass?: string;
   details: {
     label: string;
     value: string;
   }[];
 }
 
-const { details, class: className } = Astro.props;
+const { details, class: className, itemClass } = Astro.props;
 ---
 
-<dl class={cn('flex flex-1 flex-row items-end gap-x-10 gap-y-3 text-sm sm:text-base lg:flex-col', className)}>
+<dl class={cn('flex flex-1 flex-row items-end gap-x-10 gap-y-3 text-sm sm:text-base', className)}>
   {
     details.map((detail) => (
-      <div class="flex w-fit flex-wrap gap-1  lg:flex-row">
+      <div class={cn('flex w-fit flex-wrap gap-1  lg:flex-row', itemClass)}>
         <dt class="font-semibold text-color-text-title after:content-[':']">{detail.label}</dt>
         <dd class="text-color-text-primary" set:html={markdownToHtml(detail.value)} />
       </div>

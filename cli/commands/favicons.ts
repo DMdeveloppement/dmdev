@@ -26,9 +26,8 @@ export async function faviconsCommand() {
 }
 
 async function generateFavicons() {
-  console.log(OUTPUT_ASSETS_DIR, OUTPUT_ASSETS_DIR.replace('public/', 'dmdev'));
   return favicons(data.baseImage, {
-    path: OUTPUT_ASSETS_DIR.replace('public', 'dmdev'),
+    path: OUTPUT_ASSETS_DIR.replace('public', ''),
     appName: data.appName,
     appDescription: data.appDescription,
     appShortName: data.appShortName,

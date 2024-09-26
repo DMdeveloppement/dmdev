@@ -16,7 +16,6 @@ import { defineConfig, envField } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: getSiteUrl(),
-  base: process.env.BASE_URL,
   experimental: {
     env: {
       schema: {

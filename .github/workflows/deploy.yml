@@ -15,8 +15,7 @@ permissions:
   id-token: write
 
 env:
-  ASTRO_SITE: https://dmdeveloppement.github.io
-  BASE_URL: dmdev
+  ASTRO_SITE: https://dmdev.fr
 
 jobs:
   build:
