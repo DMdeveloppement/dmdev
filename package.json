@@ -20,7 +20,7 @@
   },
   "scripts": {
     "postinstall": "npm run generate:favicons",
-    "dev": "astro dev --no-sandbox",
+    "dev": "astro dev",
     "build": "tsx cli build",
     "preview": "astro preview",
     "check": "concurrently \"eslint .\" \"astro check\" \"prettier --check .\" -n eslint,astro,prettier -c magenta,red,yellow",
@@ -30,7 +30,7 @@
     "generate:pdf:watch": "nodemon --exec \"tsx cli pdf\"",
     "generate:og": "tsx cli og",
     "generate:og:watch": "nodemon --exec \"tsx cli og\"",
-    "generate:favicons": "tsx cli favicons --no-sandbox",
+    "generate:favicons": "tsx cli favicons",
     "update:colors": "tsx cli colors"
   },
   "dependencies": {
